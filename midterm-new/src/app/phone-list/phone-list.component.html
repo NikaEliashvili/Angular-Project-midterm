@@ -1,0 +1,6 @@
+<div *ngFor="let phone of phoneList; let i = index" >
+  <div [style.backgroundColor]="i === 0 ? 'yellow' : 'white'">
+    <app-phone-item [phone]="phone"></app-phone-item>
+  </div>
+  </div>
+  

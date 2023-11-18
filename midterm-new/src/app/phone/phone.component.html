@@ -1,0 +1,21 @@
+<form [formGroup]="phoneForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="brand">Brand:</label>
+      <input type="text" id="brand" formControlName="brand">
+      <div *ngIf="phoneForm.get('brand')?.hasError('required')">
+        Brand is required.
+      </div>
+    </div> 
+    <div>
+      <label for="color">Color:</label>
+      <input type="text" id="color" formControlName="color">
+    </div>
+  
+    <div>
+      <label for="isAvailableInStore">Available in Store:</label>
+      <input type="checkbox" id="isAvailableInStore" formControlName="isAvailableInStore">
+    </div>
+  
+    <button type="submit" [disabled]="!phoneForm.valid">Submit</button>
+  </form>
+  
